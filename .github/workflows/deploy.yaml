@@ -8,3 +8,11 @@ jobs:
         steps:
             - id: s1
               run: echo "github ${{github.ref_name}}"
+            - run: ls -l
+            - id: s2
+              uses: actions/setup-node@v4
+              with:
+                node-version: 24
+            - id: s3
+              uses: actions/checkout@v5
+            - run: ls -l
