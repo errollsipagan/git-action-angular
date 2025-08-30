@@ -20,3 +20,13 @@ jobs:
               run: npm i -s @angular/cli && npm ci && echo "Installed!"
             - id: s5
               run: ng build
+            - id: s6
+              run: ls -l dist/countingbook/browser
+            - id: s7
+              uses: nwtgck/actions-netlify@v3.0
+              with:
+                publish-dir: './dist/countingbook/browser'
+                production-deploy: true
+              env:
+                NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
