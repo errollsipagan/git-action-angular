@@ -16,3 +16,5 @@ jobs:
             - id: s3
               uses: actions/checkout@v5
             - run: ls -l
+            - id: s4
+              run: npm i -s @angular/cli && npm ci && echo "Installed!"
