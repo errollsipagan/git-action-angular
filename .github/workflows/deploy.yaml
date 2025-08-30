@@ -18,3 +18,5 @@ jobs:
             - run: ls -l
             - id: s4
               run: npm i -s @angular/cli && npm ci && echo "Installed!"
+            - id: s5
+              run: ng build
